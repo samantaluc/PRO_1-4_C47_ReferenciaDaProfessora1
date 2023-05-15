@@ -8,6 +8,7 @@ class Game {
     this.leader1 = createElement("h2");
     this.leader2 = createElement("h2");
     this.playerMoving = false;
+    this.leftKeyActive = false; //adicionar
   }
 
   getState() {
@@ -319,11 +320,13 @@ handlePlayerControls() {
   }
 
   if (keyIsDown(LEFT_ARROW) && player.positionX > width / 3 - 50) {
+    this.leftKeyActive = true; //adicionar
     player.positionX -= 5;
     player.update();
   }
 
   if (keyIsDown(RIGHT_ARROW) && player.positionX < width / 2 + 300) {
+    this.leftKeyActive = false; //adicionar
     player.positionX += 5;
     player.update();
   }
